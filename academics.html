@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Academics - Samuel Alex Nedumattom</title>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<style>
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			margin: 0;
+			padding: 0;
+			background: linear-gradient(120deg, #e0f7fa, #f1f8e9);
+			color: #333;
+		}
+
+		header {
+			background: #004d40;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+		}
+
+		nav {
+			margin-top: 10px;
+		}
+
+		nav button {
+			background: #00796b;
+			border: none;
+			color: white;
+			padding: 10px 18px;
+			border-radius: 6px;
+			margin: 0 5px;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+
+		nav button:hover {
+			background: #004d40;
+			transform: scale(1.05);
+		}
+
+		main {
+			max-width: 900px;
+			margin: 30px auto;
+			padding: 20px;
+			background: white;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		h2 {
+			color: #00796b;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 15px;
+		}
+
+		th,
+		td {
+			border: 1px solid #ddd;
+			padding: 10px;
+			text-align: center;
+		}
+
+		th {
+			background: #00796b;
+			color: white;
+		}
+
+		canvas {
+			margin-top: 30px;
+		}
+
+		footer {
+			text-align: center;
+			padding: 20px;
+			background: #004d40;
+			color: white;
+			margin-top: 40px;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Samuel Alex Nedumattom</h1>
+		<p>B.Tech in Computer Science and Engineering</p>
+		<nav>
+			<button onclick="window.location.href='index.html'">Home</button>
+			<button onclick="window.location.href='academics.html'">Academics</button>
+			<button onclick="window.location.href='skills.html'">Skills</button>
+		</nav>
+	</header>
+
+	<main>
+		<h2>Semester Summary</h2>
+		<table>
+			<tr>
+				<th>Semester</th>
+				<th>Marks Obtained</th>
+				<th>Max Marks</th>
+				<th>Percentage</th>
+				<th>Result</th>
+			</tr>
+			<tr>
+				<td>Sem 1</td>
+				<td>494</td>
+				<td>550</td>
+				<td>90%</td>
+				<td>First Class with Distinction</td>
+			</tr>
+			<tr>
+				<td>Sem 2</td>
+				<td>521</td>
+				<td>600</td>
+				<td>87%</td>
+				<td>First Class with Distinction</td>
+			</tr>
+			<tr>
+				<td>Sem 3</td>
+				<td>548</td>
+				<td>650</td>
+				<td>84%</td>
+				<td>First Class with Distinction</td>
+			</tr>
+			<tr>
+				<td>Sem 4</td>
+				<td>452</td>
+				<td>550</td>
+				<td>82%</td>
+				<td>First Class with Distinction</td>
+			</tr>
+		</table>
+
+		<h2>Performance Graph</h2>
+		<canvas id="semChart"></canvas>
+	</main>
+
+	<footer>
+		<p>&copy; 2025 Samuel Alex Nedumattom. All Rights Reserved.</p>
+	</footer>
+
+	<script>
+		const ctx = document.getElementById('semChart').getContext('2d');
+		new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4'],
+				datasets: [{
+					label: 'Percentage',
+					data: [90, 87, 84, 82],
+					borderColor: '#00796b',
+					backgroundColor: 'rgba(0,121,107,0.2)',
+					borderWidth: 2,
+					tension: 0.3,
+					fill: true,
+					pointBackgroundColor: '#004d40'
+				}]
+			},
+			options: {
+				responsive: true,
+				scales: {
+					y: { beginAtZero: true, max: 100, title: { display: true, text: 'Percentage (%)' } },
+					x: { title: { display: true, text: 'Semester' } }
+				}
+			}
+		});
+	</script>
+</body>
+
+</html>
